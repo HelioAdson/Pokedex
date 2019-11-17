@@ -3,14 +3,14 @@ import Pokecard from '../components/Pokecard';
 import Header from '../components/Header';
 import Navbar from '../components/Navbar';
 
-function Pokehome(){
+function Pokehome(props){
     return (
         <div className="bg-secondary">
         <Header/>
         <div style = {{display:"flex",flexDirection:"row",}}>
-        <Navbar/>
+        <Navbar login={props.login}/>
         <Pokecard/> 
-        </div>
+        </div>  
         </div>
     );
 }

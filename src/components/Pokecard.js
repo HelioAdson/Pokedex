@@ -54,15 +54,15 @@ export default class Pokecard extends Component {
         {this.state.data.map(x => {
           return (
             <>
-            <Pokemini className="btn btn-outline-dark" onClick={() => {navigate(`/${x.name}`)}}>
+            <Pokemini className="btn btn-dark" onClick={() => {navigate(`/pokemon/${x.name}`)}}>
             <img src={x.image_url} alt={x.id} />
             <div className="text-white">{x.name.charAt(0).toUpperCase() + x.name.slice(1)}</div>
             </Pokemini>
             </>
             );
         })}
-        <button onClick={this.handleClick}>Ver mais</button>
-      </Pokeboard>
+        <button className="btn btn-dark" onClick={this.handleClick}>Ver mais</button>
+      </Pokeboard>  
     );
   } 
 
