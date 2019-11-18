@@ -38,7 +38,7 @@ export default class Navbar extends Component{
     render(){
         if(this.props.login === false){
         return(
-            <Pokenav className="bg-primary">
+            <Pokenav className="bg-light">
             <Offset/>
             <img src={Char} style={{height:"2.5em"}}></img> 
             <Offset/>
@@ -49,7 +49,7 @@ export default class Navbar extends Component{
         );
         }else{
             return(
-                <Pokenav className="bg-primary">
+                <Pokenav className="bg-light">
                 <Offset/>
                 <img src={Char} style={{height:"2.5em"}}></img> 
                 <Offset/>

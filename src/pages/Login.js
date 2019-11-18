@@ -66,7 +66,7 @@ export default class Login extends Component{
     render(){
         return (
             <>
-            <div className="bg-secondary">
+            <div className="bg-light">
             <Header/>
             <div style = {{display:"flex",flexDirection:"row",}}>
             <Navbar login={false}/>

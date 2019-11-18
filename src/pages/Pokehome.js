@@ -5,7 +5,7 @@ import Navbar from '../components/Navbar';
 
 function Pokehome(props){
     return (
-        <div className="bg-secondary">
+        <div className="bg-light">
         <Header/>
         <div style = {{display:"flex",flexDirection:"row",}}>
         <Navbar login={props.login}/>

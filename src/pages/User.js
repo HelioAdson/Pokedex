@@ -36,6 +36,9 @@ const Pokefav = styled.button`
   align-items: center;
   cursor:pointer;
   border-radius: 1em;
+  :focus{
+    outline: none;
+    }
 `;
 
 const Remove = styled.button`
@@ -75,18 +78,18 @@ export default class User extends Component{
       console.log(this.props.user)
       if(this.state.state == true){
         return (
-            <div className="bg-secondary">
+            <div className="bg-light">
             <Header/>
             <div style = {{display:"flex",flexDirection:"row",}}>
             <Navbar login={this.props.login}/>
             <Central>
             <h1>{this.state.user}</h1>
-            <Fav className ="btn btn-outline-primary text-white">
+            <Fav className ="btn-dark text-white">
             <div>*Pokemons Favoritos*</div>
             {this.state.info.map(x => {
                 return (
                     <>
-                    <Pokefav className ="btn btn-outline-light text-white" onClick={() => {navigate(`/pokemon/${x.name}`)}}>
+                    <Pokefav className ="btn-outline-primary text-dark" onClick={() => {navigate(`/pokemon/${x.name}`)}}>
                     <div>{x.name}</div>
                     <img src={x.image_url} alt={x.id} />
                     <Remove className ="btn btn-danger text-white" onClick={() => {this.removePokemon(x.name)}}>

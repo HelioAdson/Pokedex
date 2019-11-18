@@ -57,7 +57,7 @@ export default class Header extends Component{
     }
     render(){
     return(
-        <Pokeheader className="bg-danger">
+        <Pokeheader className="bg-light">
         <img src={Logo} style={{height:"5.62em"}}></img>
         <Offset2/>
         <img src={LogoPK} style={{height:"5.62em"}}></img>
@@ -69,10 +69,6 @@ export default class Header extends Component{
         <input type="email" class="form-control form-control-sm" placeholder="Pesquisar" value={this.state.value} onChange={this.handleChange} onKeyDown={this.handleKeyDown} />
         </div>
         <Offset0/>
-        <Pokebutton className="btn btn-dark" >
-        <img src={Play} style={{height:"2.5em"}}></img>
-        <h7> Music</h7>
-        </Pokebutton>
         </Pokeheader>
     );
     }
