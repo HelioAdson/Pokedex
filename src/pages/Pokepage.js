@@ -40,6 +40,9 @@ const Pokemini = styled.button`
     transform: scale(1.1);
     transition: 0.1.5s ease-out;
   }
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 const Favorite = styled.button`
@@ -56,6 +59,7 @@ const Favorite = styled.button`
 export default class Pokepage extends Component{
   constructor(props) {
     super(props)
+    
 }
     state = {
         pokemon: [],
@@ -93,11 +97,11 @@ export default class Pokepage extends Component{
                 <img src={this.state.pokemon.image_url} alt={this.state.pokemon.id}  style = {{width: "200%",height:"200%"}}/>
                 </div>
                 <div>
-                <div className="text-white">Nome: {this.state.pokemon.name}</div>
-                <div className="text-white">Número: #{('00' + this.state.pokemon.number).slice(-3)} </div>
-                <div className="text-white">Peso: {this.state.pokemon.weight}</div>
-                <div className="text-white">Altura: {this.state.pokemon.height}</div>
-                <div className="text-white">Tipo: {this.state.pokemon.kind}</div>
+                <div className="text-secondary">Nome: {this.state.pokemon.name}</div>
+                <div className="text-secondary">Número: #{('00' + this.state.pokemon.number).slice(-3)} </div>
+                <div className="text-secondary">Peso: {this.state.pokemon.weight}</div>
+                <div className="text-secondary">Altura: {this.state.pokemon.height}</div>
+                <div className="text-secondary">Tipo: {this.state.kind}</div>
                 <div style = {{display:"flex",justifyContent:"flex-end"}}>
                 <Favorite className="btn btn-outline-warning"  onClick={() => {navigate(`/fav/${this.props.name}`)}}>
                 <img src={star} style={{height:"1em"}}></img> 

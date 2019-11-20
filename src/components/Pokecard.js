@@ -74,8 +74,8 @@ export default class Pokecard extends Component {
             <>
             <Pokemini color={Putcolor(x.kind.split(';',1))} className="btn btn-dark" onClick={() => {navigate(`/pokemon/${x.name}`)}}>
             <img src={x.image_url} alt={x.id} />
-            <div className="text-white">#{('00' + x.number).slice(-3)} </div>
-            <div className="text-white">{x.name.charAt(0).toUpperCase() + x.name.slice(1)}</div>
+            <div className="text-secondary">#{('00' + x.number).slice(-3)} </div>
+            <div className="text-secondary">{x.name.charAt(0).toUpperCase() + x.name.slice(1)}</div>
             </Pokemini>
             </>
             );

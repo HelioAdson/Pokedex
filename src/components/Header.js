@@ -1,29 +1,29 @@
 import React, { Component } from "react";
 import styled from 'styled-components';
-import Logo from "../pokelogo.png";
+import Dex from "../dex.png";
 import LogoPK from "../pk.png";
-import Pikachu from "../pikachu1.png";
 import {navigate } from "@reach/router";
-import Play from "../player.png";
 
 const Pokeheader = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: nowrap;
   align-items:center;
+  justify-content:space-between;
   width: 100%;
   min-height: 30%;
   max-height: 30%;
   text-align:center;
 `;
-const Offset1 = styled.div`
-    width:25%;
+const LogoTitle = styled.div` 
+  display:flex;
+  flex-direction:row;
+  justify-content:space-between;
+  align-items:center;
 `;
-const Offset2 = styled.div`
-    width:40%;
-`;
+
 const Offset0 = styled.div`
-    width:2%;
+    width:1em;
 `;
 const Home = styled.h1`
     cursor:pointer;
@@ -58,17 +58,14 @@ export default class Header extends Component{
     render(){
     return(
         <Pokeheader className="bg-light">
-        <img src={Logo} style={{height:"5.62em"}}></img>
-        <Offset2/>
+        <LogoTitle>
         <img src={LogoPK} style={{height:"5.62em"}}></img>
         <Home onClick={() => {navigate(`/`)}}>Pokedex</Home>
         <Offset0/>
-        <img src={Pikachu} style={{height:"5.5em"}}></img>
-        <Offset2/>
-        <div class="form-group">
+        </LogoTitle>
+        <div class="input-group">
         <input type="email" class="form-control form-control-sm" placeholder="Pesquisar" value={this.state.value} onChange={this.handleChange} onKeyDown={this.handleKeyDown} />
         </div>
-        <Offset0/>
         </Pokeheader>
     );
     }
@@ -77,11 +74,8 @@ export default class Header extends Component{
         console.log(this.state.value)
       }
     handleKeyDown = (e) => {
-        const pokemon = this.state.value.slice();
-        pokemon.toString().charAt().toLowerCase() 
-        console.log(pokemon)
         if (e.key === 'Enter') {
-          navigate(`/pokemon/${pokemon}`)
+          navigate(`/pokemon/${this.state.value.toString().toLowerCase()}`)
         }
     }
     
